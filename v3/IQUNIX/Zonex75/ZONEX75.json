@@ -1,0 +1,123 @@
+{
+    "name": "\u667a\u82af\u4e91MK01",
+    "vendorId": "0x5343",
+    "productId": "0x0067",
+    "matrix": {"rows": 7, "cols": 14},
+    
+    "layouts":{
+      
+      "keymap":[
+        ["0,0", {"x":0.25},"0,1","0,2","0,3","0,4",{"x":0.25}, "0,5","0,6","0,7","0,8",{"x":0.25}, "0,9","0,10","0,11","0,12","6,12"],
+
+        ["1,0", "1,1","1,2","1,3","1,4", "1,5","1,6","1,7","1,8", "1,9","1,10","1,11","1,12","0,13","1,13",{"x":0.75},"3,13"],
+
+        [{"x":0.25},"2,0", {"x":0.25},"2,1","2,2","2,3","2,4", "2,5","2,6","2,7","2,8", "2,9","2,10","2,11","2,12",{"x":0.25},"2,13",{"x":1},"4,13"],
+
+        ["3,0",{"x":0.75},"3,1","3,2","3,3","3,4","3,5","3,6","3,7","3,8","3,9","3,10","3,11","4,12","3,12",{"x":1},"5,12"],
+
+        ["4,0",{"x":0.25},"5,0","4,1","4,2","4,3","4,4","4,5","4,6","4,7","4,8","4,9","4,10",{"x":0.5},"4,11",{"x":0.75},"5,8",{"x":0.25},"5,13"],
+        ["5,1",{"x":0.4},"5,2",{"x":0.4},"5,3",{"w":6.25},"5,4","5,5","5,6","5,7",{"x":0.4},"5,9","5,10", "5,11"]
+        ]
+    },
+  
+    "keycodes": ["qmk_lighting"],
+    "customKeycodes": [
+      {"name": "KC_USB", "title": "USB MODE", "shortName": "USB"},
+      {"name": "KC_BT1", "title": "BLE HOST 1", "shortName": "BT1"},
+      {"name": "KC_BT2", "title": "BLE HOST 2", "shortName": "BT2"},
+      {"name": "KC_BT3", "title": "BLE HOST 3", "shortName": "BT3"},
+      {"name": "KC_24G", "title": "2.4G Host", "shortName": "24G"},
+      {"name": "KC_BND", "title": "2.4G BONDING", "shortName": "BND"}
+      ],
+    "menus": [
+    {
+      "label": "Lighting",
+      "content": [
+        {
+          "label": "Backlight",
+          "content": [
+            {
+              "label": "Brightness",
+              "type": "range",
+              "options": [0, 255],
+              "content": ["id_qmk_rgb_matrix_brightness", 3, 1]
+            },
+            {
+              "label": "Effect",
+              "type": "dropdown",
+              "content": ["id_qmk_rgb_matrix_effect", 3, 2],
+              "options": [
+                "\u5168\u7184All Off",
+                "\u5355\u8272Solid Color",
+                "\u63a7\u5236\u952eAlphas Mods",
+                "\u4e0a\u4e0b\u6e10\u53d8Gradient Up/Down",
+                "\u5de6\u53f3\u6e10\u53d8Gradient Left/Right",
+                "\u547c\u5438Breathing",
+                "\u9971\u548c\u5ea6\u6761Band Sat.",
+                "\u4eae\u5ea6\u6761Band Val.",
+                "\u9971\u548c\u5ea6\u98ce\u8f66Pinwheel Sat.",
+                "\u4eae\u5ea6\u6761\u98ce\u8f66Pinwheel Val.",
+                "\u9971\u548c\u5ea6\u87ba\u65cbSpiral Sat.",
+                "\u4eae\u5ea6\u6761\u87ba\u65cbSpiral Val.",
+                "\u5168\u5faa\u73afCycle All",
+                "\u5de6\u53f3\u5faa\u73afCycle Left/Right",
+                "\u4e0a\u4e0b\u5faa\u73afCycle Up/Down",
+                "\u5185\u5916\u5faa\u73afCycle Out/In",
+                "\u5185\u5916\u53cc\u5faa\u73afCycle Out/In Dual",
+                "\u5f69\u8679Rainbow Moving Chevron",
+                "\u5faa\u73af\u98ce\u8f66Cycle Pinwheel",
+                "\u5faa\u73af\u87ba\u65cbCycle Spiral",
+                "\u53cc\u706f\u5854Dual Beacon",
+                "\u5f69\u8679\u706f\u5854Rainbow Beacon",
+                "\u5f69\u8679\u98ce\u8f66Rainbow Pinwheels",
+                "\u96e8\u6ef4Raindrops",
+                "\u5f69\u7cd6\u96e8\u6ef4Jellybean Raindrops",
+                "\u9971\u548c\u5ea6\u547c\u5438Hue Breathing",
+                "\u9971\u548c\u5ea6\u706f\u6446Hue Pendulum",
+                "\u9971\u548c\u5ea6\u6ce2\u6d6aHue Wave",
+                "\u50cf\u7d20\u96e8Pixel Rain",
+                "\u50cf\u7d20\u6d41\u52a8Pixel Flow",
+                "\u50cf\u7d20\u5206\u5f62Pixel Fractal",
+                "\u70ed\u5ea6Typing Heatmap",
+                "\u6570\u5b57\u96e8Digital Rain",
+                "\u7b80\u5355\u6309\u952eSolid Reactive Simple",
+                "\u6309\u952eSolid Reactive",
+                "\u6309\u952e-\u5bbdSolid Reactive Wide",
+                "\u6309\u952e-\u591a\u5bbdSolid Reactive Multi Wide",
+                "\u6309\u952e-\u5341\u5b57Solid Reactive Cross",
+                "\u6309\u952e-\u591a\u5341\u5b57Solid Reactive Multi Cross",
+                "\u6309\u952e-\u8054\u7ed3Solid Reactive Nexus",
+                "\u6309\u952e-\u591a\u8054\u7ed3Solid Reactive Multi Nexus",
+                "\u98de\u6e85Spash",
+                "\u591a\u98de\u6e85Multi Splash",
+                "\u5355\u8272\u98de\u6e85Solid Splash",
+                "\u5355\u8272\u591a\u98de\u6e85Solid Multi Splash"
+              ]
+            },
+            {
+              "showIf": "{id_qmk_rgb_matrix_effect} != 0",
+              "label": "Effect Speed",
+              "type": "range",
+              "options": [0, 255],
+              "content": ["id_qmk_rgb_matrix_effect_speed", 3, 3]
+            },
+            {
+              "showIf": "{id_qmk_rgb_matrix_effect} != 0 && {id_qmk_rgb_matrix_effect} != 24 && {id_qmk_rgb_matrix_effect} != 28 && {id_qmk_rgb_matrix_effect} != 29 && {id_qmk_rgb_matrix_effect} != 32",
+              "label": "Color",
+              "type": "color",
+              "content": ["id_qmk_rgb_matrix_color", 3, 4]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  
+  
+  
+  
+  
+  
+  }
+  
+  
